@@ -1,0 +1,185 @@
+// 定义css3动画
+*{
+    font-family: microsoft yahei;
+}
+.search{
+	position: relative;
+	.glyphicon-search{
+	position: absolute;
+	top: 18px;
+	left: 5px;
+     }
+}
+.nav{
+	width: 100%;
+	line-height: 30px;
+	border-top: 1px solid #E48907;
+	border-bottom: 1px solid #E48907;
+}
+.search input{
+	    margin-right:-50px; 
+	    border-radius: 10px;
+     	text-indent: 10px;
+     	margin: 0px;
+     }
+.view{
+	font-size: 30px;
+}
+.container2{
+	margin-top: 20px;
+}
+.loader {
+	// 居中
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -5em;
+	width: 11em;
+	height: 11em;
+	// background: green;
+	transform: rotate(45deg);
+	// 定义伪元素
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 11em;
+		height: 11em;
+		border-radius: .5em;
+		transform: translate(-50%, -50%);
+	}
+	// 垂直方向
+	&:after {
+		width: 1em;
+		// background: gold;
+		animation: moveafter 2s infinite;
+	}
+	// 水平方向
+	&:before {
+		height: 1em;
+		// background: purple;
+		animation: movebefore 2s infinite;
+	}
+}
+.banner{
+	height: 700px;
+	h2{
+	margin-bottom:230px !important; 
+   }
+}
+
+.loader-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -8em;
+	margin-left: -4em;
+	font-size: 20px;
+}
+.app-header {
+	input {
+		margin-top: 10px;
+		padding: 5px 10px;
+	}
+	.nav a {
+		letter-spacing: 3px;
+		margin:0px 5px;
+		padding: 5px;
+		border-radius: none !important;
+		&:hover,
+		&:focus {
+			background: none;
+		    color: #E48907;
+
+		}
+	}
+	
+}
+
+.page {
+	ul {
+		padding: 0;
+		margin-right: -20px;
+		li {
+			list-style: none;
+			float: left;
+			// width: 278px;
+			width: 270px;
+			height: 200px;
+			margin: 20px 20px 0 0;
+			position: relative;
+		}
+		a {
+			color: #fff;
+			text-decoration: none;
+		}
+		.content {
+			width: 270px;
+			height: 200px;
+			display: table-cell;
+			vertical-align: middle;
+			h2 {
+				font-size: 38px;
+				text-align: center;
+				padding: 0 10px;
+			}
+		}
+		.layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0, 0, 0, .8);
+			padding: 40px 20px;
+			opacity: 0;
+		}
+		a:hover .layer {
+			opacity: 1;
+			transition: opacity 600ms;
+		}
+	}
+}
+
+// 定义关键帧
+@keyframes moveafter{
+	0% {
+		height: 1em;
+		box-shadow: -3em -5em #c9f0fc, 3em 5em #f4a7c4;
+	}
+	35% {
+		height: 11em;
+		box-shadow: -3em 0 #c9f0fc, 3em 0 #f4a7c4;
+	}
+	70% {
+		height: 1em;
+		// 改变位置， 移动5em
+		box-shadow: -3em 5em #c9f0fc, 3em -5em #f4a7c4;
+	}
+	100% {
+		height: 1em;
+		// 改变位置， 移动5em
+		box-shadow: -3em -5em #c9f0fc, 3em 5em #f4a7c4;
+	}
+}
+@keyframes movebefore{
+	0% {
+		width: 1em;
+		box-shadow: -5em 3em #b3e5d5, 5em -3em #f7dfac;
+	}
+	35% {
+		width: 11em;
+		box-shadow: 0 3em #b3e5d5, 0 -3em #f7dfac;
+	}
+	70% {
+		width: 1em;
+		// 改变位置，移动5em
+		box-shadow: 5em 3em #b3e5d5, -5em -3em #f7dfac;
+	}
+	100% {
+		width: 1em;
+		box-shadow: -5em 3em #b3e5d5, 5em -3em #f7dfac;
+	}
+}
